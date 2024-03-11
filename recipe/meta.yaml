@@ -52,7 +52,7 @@ outputs:
       build:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        #- arm-variant * {{ arm_variant_type }}  # [aarch64]
         - sysroot_{{ target_platform }} {{ conda_glibc_ver }}    # [linux]
         - patchelf <0.18.0                      # [linux]
       host:
@@ -86,7 +86,7 @@ outputs:
       build:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        #- arm-variant * {{ arm_variant_type }}  # [aarch64]
         - sysroot_{{ target_platform }} {{ conda_glibc_ver }}    # [linux]
       host:
         - cuda-version {{ cuda_version }}
@@ -125,7 +125,7 @@ outputs:
       build:
         - {{ compiler("c") }}
         - {{ compiler("cxx") }}
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        #- arm-variant * {{ arm_variant_type }}  # [aarch64]
         - sysroot_{{ target_platform }} {{ conda_glibc_ver }}    # [linux]
       host:
         - cuda-version {{ cuda_version }}
