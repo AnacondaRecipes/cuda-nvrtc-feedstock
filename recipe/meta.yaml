@@ -23,7 +23,7 @@ source:
   sha256: a63302a077f0248a743a1a7caa7dbd80d0fac56c6cfa9c41fa05fac9b7e5eda5  # [win]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false
   skip: true  # [osx or (linux and s390x) or ppc64le]
 
@@ -55,9 +55,9 @@ outputs:
         - {{ stdlib("c") }}
         - patchelf <0.18.0                      # [linux]
       host:
-         - cuda-version {{ cuda_version }}
+        - cuda-version {{ cuda_version }}
       run:
-         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+        - {{ pin_compatible("cuda-version", max_pin="x.x") }}
     # Tests are defined at the top level, due to package/output name conflicts.
     about:
       home: https://developer.nvidia.com/cuda-toolkit
