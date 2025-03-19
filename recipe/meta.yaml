@@ -29,7 +29,7 @@ build:
 
 requirements:
   build:
-    - cf-nvidia-tools 1.*
+    - cf-nvidia-tools 1.*  # [linux]
 
 outputs:
   - name: cuda-nvrtc
