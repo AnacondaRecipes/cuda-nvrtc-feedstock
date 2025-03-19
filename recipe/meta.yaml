@@ -30,6 +30,7 @@ build:
 requirements:
   build:
     - cf-nvidia-tools 1.*  # [linux]
+    - patchelf <0.18.0                      # [linux]
 
 outputs:
   - name: cuda-nvrtc
@@ -43,7 +44,6 @@ outputs:
         - {{ compiler("cxx") }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
         - {{ stdlib("c") }}
-        - patchelf <0.18.0                      # [linux]
       host:
         - cuda-version {{ cuda_version }}
       run:
