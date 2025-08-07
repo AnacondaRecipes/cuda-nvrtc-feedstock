@@ -62,24 +62,17 @@ if exist lib\x64 (
 )
 echo.
 
-echo Checking if bin\x64 exists:
-if exist bin\x64 (
-    echo bin\x64 EXISTS - contents:
-    dir bin\x64
+echo Checking if bin exists:
+if exist bin (
+    echo bin EXISTS - contents:
+    dir bin
     echo.
-    echo Moving bin\x64 files to %LIBRARY_BIN%\x64:
-    move bin\x64\* %LIBRARY_BIN%\x64
+    echo Moving bin files to %LIBRARY_BIN%\x64:
+    move bin\* %LIBRARY_BIN%\x64
     echo Move completed. New contents of %LIBRARY_BIN%\x64:
     dir %LIBRARY_BIN%\x64
 ) else (
-    echo bin\x64 DOES NOT EXIST
-    echo Checking if bin directory exists:
-    if exist bin (
-        echo bin exists, contents:
-        dir bin
-    ) else (
-        echo bin directory does not exist
-    )
+    echo bin directory does not exist
 )
 echo.
 
