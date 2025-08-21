@@ -2,11 +2,9 @@
 {% set version = "12.8.93" %}
 {% set cuda_version = "12.8" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
-{% set platform = "linux-ppc64le" %}  # [ppc64le]
 {% set platform = "linux-sbsa" %}  # [aarch64]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set target_name = "x86_64-linux" %}  # [linux64]
-{% set target_name = "ppc64le-linux" %}  # [ppc64le]
 {% set target_name = "sbsa-linux" %}  # [aarch64]
 {% set target_name = "x64" %}  # [win]
 {% set extension = "tar.xz" %}  # [not win]
