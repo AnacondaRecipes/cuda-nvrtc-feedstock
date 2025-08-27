@@ -19,6 +19,7 @@ package:
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
   sha256: 992f5e4d95cb499f41e442245efa877dbd60c711451afe680a26700d61eb3843  # [linux64]
+  sha256: cae11cf45b9443643e82bdaecd51aec9f827db7cdab9498df388471532255480  # [ppc64le]
   sha256: a24bb837c214a1620924b9721dcc0ce82623626f8cead704aed4eb08038ac5d3  # [aarch64]
   sha256: a63302a077f0248a743a1a7caa7dbd80d0fac56c6cfa9c41fa05fac9b7e5eda5  # [win]
 
