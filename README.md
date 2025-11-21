@@ -1,5 +1,5 @@
-About cuda-nvrtc-feedstock
-==========================
+About cuda-nvrtc-split-feedstock
+================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cuda-nvrtc-feedstock/blob/main/LICENSE.txt)
 
@@ -69,10 +69,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvrtc--dev-green.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvrtc-dev.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvrtc-dev.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvrtc-dev.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-dev) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvrtc--static-green.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvrtc-static.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvrtc-static.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvrtc-static.svg)](https://anaconda.org/conda-forge/cuda-nvrtc-static) |
 
-Installing cuda-nvrtc
-=====================
+Installing cuda-nvrtc-split
+===========================
 
-Installing `cuda-nvrtc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `cuda-nvrtc-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -158,17 +158,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating cuda-nvrtc-feedstock
-=============================
+Updating cuda-nvrtc-split-feedstock
+===================================
 
-If you would like to improve the cuda-nvrtc recipe or build a new
+If you would like to improve the cuda-nvrtc-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/cuda-nvrtc-feedstock are
+Note that all branches in the conda-forge/cuda-nvrtc-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
