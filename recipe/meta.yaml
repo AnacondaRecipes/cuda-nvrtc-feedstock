@@ -26,9 +26,9 @@ source:
   sha256: 1aa0644fa53c8ca34cdc73db17bcc73530557bdd3f582c7bfdbd7916c8b48f65  # [win]
 
 build:
-  number: 1
+  number: 0
   binary_relocation: false
-  skip: true  # [osx or ppc64le]
+  skip: true  # [osx]
 
 requirements:
   build:
@@ -37,6 +37,12 @@ requirements:
 
 outputs:
   - name: cuda-nvrtc
+    build:
+      binary_relocation: false
+      missing_dso_whitelist:
+        # Needed due to the use of conda-build's --error-overlinking command-line argument
+        - '*libgcc_s.so*'   # [linux]
+        - '*libstdc++.so*'  # [linux]
     files:
       - lib/libnvrtc*.so.*                            # [linux]
       - targets/{{ target_name }}/lib/libnvrtc*.so.*  # [linux]
@@ -69,10 +75,12 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
       doc_url: https://docs.nvidia.com/cuda/nvrtc/
+      dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
   - name: cuda-nvrtc-dev
     build:
@@ -116,10 +124,12 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
       doc_url: https://docs.nvidia.com/cuda/nvrtc/
+      dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
   - name: cuda-nvrtc-static
     files:
@@ -148,20 +158,24 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
       doc_url: https://docs.nvidia.com/cuda/nvrtc/
+      dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
 about:
   home: https://developer.nvidia.com/cuda-toolkit
   license_file: LICENSE
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: NVRTC native runtime libraries
   description: |
     NVRTC native runtime libraries
   doc_url: https://docs.nvidia.com/cuda/nvrtc/
+  dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
 extra:
   recipe-maintainers:
