@@ -1,6 +1,6 @@
 {% set name = "cuda-nvrtc" %}
-{% set version = "13.1.115" %}
-{% set cuda_version = "13.1" %}
+{% set version = "13.2.78" %}
+{% set cuda_version = "13.2" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-sbsa" %}  # [aarch64]
 {% set platform = "windows-x86_64" %}  # [win]
@@ -16,9 +16,9 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: 86077f16674ccea3e621ade9678887a37aca8f7500091aee4cabb1915e0c527b  # [linux64]
-  sha256: 77ea897622931bbbe5761161454e1eab2cb82f9a8fc1386999415b71e8ff7bed  # [aarch64]
-  sha256: 4ddd5a1e34fd62bb41e78c0725edfbf5609f4ecedd7fe118eddf2148b097fc91  # [win]
+  sha256: 99dec7ff38d8540b0cb7bdc7b3c8b12b87db83f0f1023ad5f1ed8b51b4af1272  # [linux64]
+  sha256: a9f4bd677aa1ea9e11e492694080661ca062d165f1ec54ff7b207fa33353a4f4  # [aarch64]
+  sha256: 579df19af628f849188b3198c185c4ada658e1681275a7895b208b2782eed33a  # [win]
 
 build:
   number: 0
