@@ -37,8 +37,8 @@ outputs:
       binary_relocation: false
       missing_dso_whitelist:
         # Needed due to a problem with conda-build and use of --error-overlinking command-line argument
-        - '$RPATH/libgcc_s.so.1'  # [linux]
-        - '$RPATH/libstdc++.so.6'  # [linux]
+        - '*libgcc_s.so.*'  # [linux]
+        - '*libstdc++.so.*'  # [linux]
     files:
       - lib/libnvrtc*.so.*                            # [linux]
       - targets/{{ target_name }}/lib/libnvrtc*.so.*  # [linux]
@@ -71,6 +71,7 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
@@ -119,6 +120,7 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
@@ -152,6 +154,7 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: NVRTC native runtime libraries
       description: |
         NVRTC native runtime libraries
@@ -163,6 +166,7 @@ about:
   license_file: LICENSE
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: NVRTC native runtime libraries
   description: |
     NVRTC native runtime libraries
@@ -170,7 +174,5 @@ about:
   dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
 extra:
-  skip-lints:
-    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
