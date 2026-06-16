@@ -3,3 +3,7 @@ upstream_sources:
   - webpage:
       url: https://api.anaconda.org/package/conda-forge/cuda-nvrtc
       regex: '"version":\s*"([^"]+)"'
+    packages:
+      - cuda-nvrtc
+      - cuda-nvrtc-dev
+      - cuda-nvrtc-static
