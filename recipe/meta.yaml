@@ -1,14 +1,20 @@
 {% set name = "cuda-nvrtc" %}
-{% set version = "13.3.33" %}
-{% set cuda_version = "13.3" %}
+{% set version = "13.4.59" %}
+{% set cuda_version = "13.4" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-sbsa" %}  # [aarch64]
-{% set platform = "windows-x86_64" %}  # [win]
+{% set platform = "windows-x86_64" %}  # [win64]
+{% set platform = "windows-arm64" %}  # [win and arm64]
 {% set target_name = "x86_64-linux" %}  # [linux64]
 {% set target_name = "sbsa-linux" %}  # [aarch64]
-{% set target_name = "x64" %}  # [win]
+{% set target_name = "x64" %}  # [win64]
+{% set target_name = "arm64" %}  # [win and arm64]
 {% set extension = "tar.xz" %}  # [not win]
 {% set extension = "zip" %}  # [win]
+{% set sha256 = "fe5de48fa0eb8aaf3f72cb2a86f913c727bf684f9d59072d359285dde32de783" %}  # [linux64]
+{% set sha256 = "f20e869d3524c7871bea7bab969bfe13084373352efd165216b0bdc771777b9b" %}  # [aarch64]
+{% set sha256 = "cfbc01669d2059b7fdeff242082223d23bd6a7605bc398bdc77fc77de5c310f0" %}  # [win64]
+{% set sha256 = "0ec1a6746f552284430a92a58d1aabc91210947db0923bcac6a8d928b7c536fd" %}  # [win and arm64]
 
 package:
   name: {{ name|lower }}-split
@@ -16,9 +22,7 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvrtc/{{ platform }}/cuda_nvrtc-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: 9e8f78278215babd1236b137252424ca7912c185bd093201f5d97f7dd763b74a  # [linux64]
-  sha256: d0502b25799be62a50b743c640e94a1722d20b1ee4ab70d697d71750f04d3b8a  # [aarch64]
-  sha256: 8519f678588610bf380ccaac130729aa1a624c407183e7ad9c319c19ecc63d2f  # [win]
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -174,5 +178,7 @@ about:
   dev_url: https://docs.nvidia.com/cuda/nvrtc/
 
 extra:
+  skip-lints:
+    - deprecate_license_url
   recipe-maintainers:
     - conda-forge/cuda
