@@ -7,3 +7,13 @@ upstream_sources:
       - cuda-nvrtc
       - cuda-nvrtc-dev
       - cuda-nvrtc-static
+  - webpage:
+      url: https://api.anaconda.org/package/conda-forge/cuda-nvrtc
+      regex: '"version":\s*"(13\.2(?:\.\d+)*)"'
+    feedstock_branch: '13.2'
+    version_matchspec: '>=13.2,<13.3'
+    supported: true
+    packages:
+      - cuda-nvrtc
+      - cuda-nvrtc-dev
+      - cuda-nvrtc-static
